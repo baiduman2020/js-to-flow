@@ -50008,7 +50008,7 @@ SourceNode.fromStringWithSourceMap =
   };
 
 /**
- * Add a chunk of generated JS to this source node.
+ * Add a chunk of generated this source node.
  *
  * @param aChunk A string snippet of generated JS code, another instance of
  *        SourceNode, or an array where each member is one of those things.
@@ -50033,7 +50033,7 @@ SourceNode.prototype.add = function SourceNode_add(aChunk) {
 };
 
 /**
- * Add a chunk of generated JS to the beginning of this source node.
+ * Add a chunk of generated the beginning of this source node.
  *
  * @param aChunk A string snippet of generated JS code, another instance of
  *        SourceNode, or an array where each member is one of those things.

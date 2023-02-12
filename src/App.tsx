@@ -4,25 +4,21 @@ import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
 import './App.css';
 
 const { convertCodeToFlowTree, createSVGRender, createShapesTreeEditor } = window.js2flowchart;
-const code = `
-    const doStuff = (stuff: string) => {
-        if (stuff) {
-            if (devFlag) {
-                log('perf start');
-                doRecursion();
-                log('perf end');
+const code = `function findInTree(tree, targetId) {
+  if (tree.id === targetId) {
+    return tree;
+  }
+  if (tree.children) {
+    for (let i = 0; i < tree.children.length; i++) {
+      const result = findInTree(tree.children[i], targetId);
+      if (result) {
+        return result;
+      }
+    }
+  }
+  return null;
+}
 
-                return;
-            }
-
-            doRecursion();
-            end();
-        } else {
-            throw new Error('No stuff!');
-        }
-
-        return null;
-    };
 `;
 
 const svgRender = createSVGRender();
